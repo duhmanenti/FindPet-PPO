@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <title>Cadastro</title>
+    <meta charset="utf-8">
+    
+  </head>
+  <body >
+    <div class="login-box" > 
+      <form > 
+          <h1> Cadastre-se </h1>
+          <hr>
+      </form>
+      <br>
+  <input type="text" name="nome" placeholder="Nome" [(ngModel)]="userCadastro.nome" required>
+     
+  <input type="text" name="sobrenome" placeholder="Sobrenome" [(ngModel)]="userCadastro.sobrenome" required> 
+  <div>
+    <input type="email" name="email" placeholder="E-mail" [(ngModel)]="userCadastro.email" required>
+</div>
+  
+  <input type="password" name="senha" placeholder="Senha" [(ngModel)]="userCadastro.senha" required>
+
+  <input type="password" name="senha" placeholder="Confirmar senha" required>
+ 
+<!-- onkeypress="return event.charCode >= 48 && event.charCode <= 57" é usado para aceitar apenas retornos com numéros-->
+<!--maxlength="11" é pra limitar a quantidade de numeros-->
+  <input type="text"  onkeypress="return event.charCode >= 48 && event.charCode <= 57" maxlength="11" name="telefone" placeholder="(00)00000-0000" [(ngModel)]="userCadastro.telefone" required>
+
+   <input type="text" name="cidade" placeholder="Cidade" [(ngModel)]="userCadastro.cidade" required>
+ 
+   <input type="text" name="estado" placeholder="Estado" [(ngModel)]="userCadastro.estado" required>
+ 
+   <input type="text" name="bairro" placeholder="Bairro" [(ngModel)]="userCadastro.bairro" required>
+ 
+   <button value="Cadastrar" type="submit" class="button" (click)="cadastro()">Cadastrar</button>   
+   <div *ngIf="mensagemErro" class="alert alert-danger" role="alert">
+    {{mensagemErro}}
+</div>
+   <div class="posiçaoRotaLogin">
+    <a routerLink="/login" id="link">Já tem uma conta? Entrar</a>
+  </div>
+</div>
+  <!-- foto do totó
+ <img src="https://4.bp.blogspot.com/-E6lBlT-vqls/VzNBXe9qa7I/AAAAAAAABNU/JVFEfsS4Bm4UZ5hA9dBA_tCMQUk7uFWlQCLcB/s1600/procura-se.png" >
+--> 
+</body>
+</html>

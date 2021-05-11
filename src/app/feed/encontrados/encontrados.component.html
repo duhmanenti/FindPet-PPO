@@ -1,0 +1,103 @@
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+    
+        <title>encontrados</title>
+        
+    </head>
+    <body>
+        <div> 
+            <!--barra de navegação-->
+            <ul class="id">
+                <li class="posicao2"><a routerLink="/feed">FindPet</a>
+                <li><a routerLink="/home">Sair</a>
+                <li><a routerLink="/perdidos">Perdidos</a>
+                    <li><a routerLink="/perdidos">Resolvidos</a>
+            </ul>
+            <div>
+                <input type="checkbox" id="chec">
+                <label for="chec">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z" />
+                      </svg>
+                </label>
+                <nav>
+                    <ul>
+                        <li><a href="">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-question-circle-fill" viewBox="0 0 16 16">
+                                <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.496 6.033h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286a.237.237 0 0 0 .241.247zm2.325 6.443c.61 0 1.029-.394 1.029-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94 0 .533.425.927 1.01.927z"/>
+                              </svg>
+                            AJUDA 
+                        </a></li>
+                        <li><a href=""  > SOBRE NÓS</a></li>
+                        <li><a href=""> 
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+                                <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+                                <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
+                              </svg> PERFIL
+                         </a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+           <!-- card com o + -->
+          
+        <div class="cardd">
+        <div class="card" style="width: 13rem; height: 15rem;" > 
+            <div>
+            <svg xmlns="http://www.w3.org/2000/svg" width="160" height="100" fill="currentColor" class="bi bi-plus icon mais" viewBox="0 0 16 16" opacity="0.5" >
+                    <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z" (click)="mostrarFormulario()"/>
+    
+                </svg>
+                
+                </div>
+                
+            <div class="card-body">
+            </div>
+            <h3> novo Pet</h3>
+        </div>
+        </div>
+        <!-- Formulário para postar animal-->
+         <main class="container" [hidden] ="!mostrarForm">
+             <h2>Pet encontrado</h2> 
+            <form action="" class="container">
+                <div class="input-field">
+                    <input type="text" name="Estado" id="Estado" placeholder="Estado" [(ngModel)]="pet.estado">
+                 <div class="underline"></div>
+                </div>
+                <div class="input-field">
+                    <input type="text" name="cidade" id="Cidade" placeholder="Cidade" [(ngModel)]="pet.cidade">
+                 <div class="underline"></div>
+                </div>
+                <br>
+                <div class="input-field">
+                   <input type="date"name="data" id="data" placeholder="Data" >
+                 <div class="underline"> </div>
+                </div>
+            <br>
+                <div class="input-field"> 
+                    <input type="email" name="email" placeholder="email" [(ngModel)]="pet.email">
+                   <div class="underline"></div>
+                  </div>
+                <div>  
+                    <br>
+                    <h5> Informações sobre o Pet e o local onde foi encontrado:</h5>
+                    <textarea class="textarea" [(ngModel)]="pet.detalhes"></textarea>
+               
+                 <div class="underline"></div>
+                </div>
+                <div class="file"> 
+                  <input type="file" class="upload-box" accept="image/*" >
+                 <div class="underline"></div>
+                </div>
+                 <input type="submit" value="Postar" (click)="postar()">
+            </form>
+         </main>
+     
+    </body>
+    </html>

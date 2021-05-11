@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+   
+<head>
+ <title>Recuperar Senha</title>
+</head>
+ 
+<body class="fundo">
+    <div class="loginbox">
+        <img src="https://i.ibb.co/DfjcqsK/1615384272128.png"class="logo">
+               <h1>Recuperar senha</h1>
+   <form> 
+    <input type="email" class="input" placeholder="Digite seu email" [(ngModel)] = "userLogin.email" name="email" required email #email="ngModel"> 
+    <button value="Enviar e-mail" type="submit" class="button" (click)="recuperarsenha()">Enviar e-mail</button>   
+    </form>
+   </div>
+
+  </body>
+</html>
